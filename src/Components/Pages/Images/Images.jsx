@@ -4,7 +4,7 @@ import { For } from 'million/react'
 
 const Images = () => {
     const parentRef = React.useRef(null);
-
+    
     const imageModules = import.meta.glob('/src/assets/images/*.{png,jpe?g,jpg}');
     const gallery = Object.keys(imageModules).map((path) => {
         const imageUrl = new URL(path, import.meta.url).href;
@@ -40,7 +40,7 @@ const Images = () => {
                     height: `${rowVirtualizer.getTotalSize()}px`,
                     width: '100%',
                     position: 'relative',
-                }}
+                  }}
                 as="div"
             >
                 {(item) => (
@@ -53,18 +53,18 @@ const Images = () => {
                                 left: 0,
                                 width: '100%',
                                 fontSize: '20px',
-                                height: `${item.size}px`,
+                                height: `100%`,
                                 transform: `translateY(${item.start}px)`,
-                            }
+                              }
                         }
                     >
-                        Image {item.index}
-                        {/* <a href={item.key} target="_blank" rel="noopener noreferrer">
+                        {/* Image {item.index} */}
+                        <a href={item.key} target="_blank" rel="noopener noreferrer">
                             <img
                                 src={item.key}
                                 alt={`Image ${item.index}`}
                             />
-                        </a> */}
+                        </a>
                     </div>
                 )}
             </For>
@@ -95,4 +95,3 @@ const Images = () => {
 };
 
 export default Images;
-

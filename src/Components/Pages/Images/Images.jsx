@@ -4,7 +4,7 @@ import { For } from 'million/react'
 
 const Images = () => {
     const parentRef = React.useRef(null);
-    
+
     const imageModules = import.meta.glob('/src/assets/images/*.{png,jpe?g,jpg}');
     const gallery = Object.keys(imageModules).map((path) => {
         const imageUrl = new URL(path, import.meta.url).href;
@@ -33,14 +33,14 @@ const Images = () => {
     const virtualItems = rowVirtualizer.getVirtualItems();
 
     return (
-        <div ref={parentRef} className="flex flex-row gap-4">
+        <div ref={parentRef} className="flex gap-4">
             <For
                 each={virtualItems}
                 style={{
                     height: `${rowVirtualizer.getTotalSize()}px`,
                     width: '100%',
                     position: 'relative',
-                  }}
+                }}
                 as="div"
             >
                 {(item) => (
@@ -55,7 +55,7 @@ const Images = () => {
                                 fontSize: '20px',
                                 height: '100%',
                                 transform: `translateY(${item.start}px)`,
-                              }
+                            }
                         }
                     >
                         {/* Image {item.index} */}
@@ -68,7 +68,7 @@ const Images = () => {
                     </div>
                 )}
             </For>
-            
+
 
         </div>
     );

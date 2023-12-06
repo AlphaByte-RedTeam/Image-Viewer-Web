@@ -53,7 +53,7 @@ const Images = () => {
                                 left: 0,
                                 width: '100%',
                                 fontSize: '20px',
-                                height: `100%`,
+                                height: '100%',
                                 transform: `translateY(${item.start}px)`,
                               }
                         }
@@ -68,27 +68,7 @@ const Images = () => {
                     </div>
                 )}
             </For>
-            {/* {virtualItems.map((virtualItem) => (
-                <div
-                    key={virtualItem.index}
-                    data-index={virtualItem.index}
-                    ref={rowVirtualizer.ref}
-                    style={{
-                        position: 'relative',
-                        width: '100%',
-                        height: rowVirtualizer.getTotalSize(),
-                        transform: `translateY(${virtualItem.start}px)`,
-                    }}
-                >
-                    <a href={virtualItem.key} target="_blank" rel="noopener noreferrer">
-                        <img
-                            src={virtualItem.key}
-                            alt={`Image ${virtualItem.index}`}
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                        />
-                    </a>
-                </div>
-            ))} */}
+            
 
         </div>
     );
